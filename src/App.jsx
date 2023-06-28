@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { FiFileText, FiUploadCloud, FiX } from 'react-icons/fi';
 
 function App() {
   const [dragActive, setDragActive] = useState(false);
+  const [uploadedFiles, setUploadedFiles] = useState([]);
 
   const handleBrowse = () => {};
 
@@ -25,7 +26,7 @@ function App() {
         <div className="ml-4 flex flex-col items-start">
           <p className="text-base font-semibold text-black">
             Drag & drop files or{' '}
-            <span className="cursor-point text-amber-500">Browse</span>
+            <span className="cursor-pointer text-amber-500">Browse</span>
           </p>
           <p>Supported formats: pdf</p>
         </div>
