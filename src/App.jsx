@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { FiFileText, FiUploadCloud, FiX } from 'react-icons/fi';
-import './App.css';
 
 function App() {
   const [dragActive, setDragActive] = useState(false);
@@ -9,19 +8,19 @@ function App() {
 
   return (
     <div className="max-w-[400px] mx-auto mt-[20vh]">
-      <input
-        type="file"
-        accept=".pdf"
-        className="hidden"
-        multiple={true}
-        name="docs"
-        onChange={handleBrowse}
-      />
       <div
         className={`${
           dragActive ? 'border-amber-500 bg-amber-100' : 'border-black'
         } flex min-h-[185px] items-center justify-center border-4 w-full`}
       >
+        <input
+          type="file"
+          accept=".pdf"
+          className="hidden"
+          multiple={true}
+          name="docs"
+          onChange={handleBrowse}
+        />
         <FiUploadCloud size={48} />
         <div className="ml-4 flex flex-col items-start">
           <p className="text-base font-semibold text-black">
